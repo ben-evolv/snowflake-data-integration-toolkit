@@ -41,6 +41,6 @@ To set up a new data integration scenario, follow these steps:
 
 ## Additional Resources
 
-- [Data Sources](src/data_sources): Information and instructions for each of the data sources available.
-- [Replication Methods](src/replication_methods): Information and instructions for each of the replication methods available.
-- [Transformation](src/transformation): Information and instructions for the transformation tools available.
+- [Data Sources](src/data_sources/README.MD): Information and instructions for each of the data sources available.
+- [Replication Methods](src/replication_methods/README.MD): Information and instructions for each of the replication methods available.
+- [Transformation](src/transformation/README.MD): Information and instructions for the transformation tools available.

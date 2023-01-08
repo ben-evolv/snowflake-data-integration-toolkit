@@ -1,0 +1,6 @@
+[submodule "src/transformation/airbyte/airbyte"]
+	path = src/transformation/airbyte/airbyte
+	url = https://github.com/airbytehq/airbyte.git
+[submodule "src/transformations/airbyte"]
+	path = src/transformations/airbyte
+	url = https://github.com/airbytehq/airbyte.git

@@ -1,0 +1,45 @@
+# See [Source Acceptance Tests](https://docs.airbyte.com/connector-development/testing-connectors/source-acceptance-tests-reference)
+# for more information about how to configure these tests
+connector_image: airbyte/source-google-ads:dev
+test_strictness_level: high
+acceptance_tests:
+  spec:
+    tests:
+      - spec_path: "source_google_ads/spec.json"
+  connection:
+    tests:
+      - config_path: "secrets/config.json"
+        status: "succeed"
+      - config_path: "integration_tests/invalid_config.json"
+        status: "failed"
+  discovery:
+    tests:
+      - config_path: "secrets/config.json"
+  basic_read:
+    tests:
+      - config_path: "secrets/config.json"
+        expect_records:
+          bypass_reason: "Bypassed because SAT run on active account. Dedicated Sandbox is needed."
+        empty_streams:
+          - name: "geographic_report"
+            bypass_reason: "The stream could not be fullfield with data manually."
+          - name: "keyword_report"
+            bypass_reason: "The stream could not be fullfield with data manually."
+          - name: "display_keyword_performance_report"
+            bypass_reason: "The stream could not be fullfield with data manually."
+          - name: "display_topics_performance_report"
+            bypass_reason: "The stream could not be fullfield with data manually."
+          - name: "shopping_performance_report"
+            bypass_reason: "The stream could not be fullfield with data manually."
+          - name: "unhappytable"
+            bypass_reason: "The stream could not be fullfield with data manually."
+          - name: "click_view"
+            bypass_reason: "The stream could not be fullfield with data manually."
+        timeout_seconds: 1200
+  full_refresh:
+    tests:
+      - config_path: "secrets/config.json"
+        configured_catalog_path: "integration_tests/configured_catalog.json"
+        timeout_seconds: 1200
+  incremental:
+    bypass_reason: "Incremental tests are implemented using custom test, available by integration_tests/test_incremental.py"

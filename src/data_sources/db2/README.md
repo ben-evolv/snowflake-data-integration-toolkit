@@ -2,8 +2,12 @@
 
 This project aims to compare and contrast IBM DB2 CDC options with Snowflake. It includes steps to build the project using both Debezium and Kafka, as well as Airbyte.
 
+## Prerequisites
+You will need to have Docker Installed. This code was developed on Windows 10 using the Windows Subsystem for Linux (WSL). 
+I followed [these instructions](https://docs.docker.com/engine/install/ubuntu/) Which are in  found in the [Installing DB2 on Your Coffee Break](https://ajstorm.medium.com/installing-db2-on-your-coffee-break-5be1d811b052) instructions. 
+
 ## Build with Debezium and Kafka
-First DB2 needs to be installed on Docker. I followed [Installing DB2 on Your Coffee Break](https://ajstorm.medium.com/installing-db2-on-your-coffee-break-5be1d811b052) and modified it to use docker-compose. This is found in the root folder of the project. [^1]
+DB2 needs to be installed on Docker. I followed [Installing DB2 on Your Coffee Break](https://ajstorm.medium.com/installing-db2-on-your-coffee-break-5be1d811b052) and modified it to use docker-compose. This is found in the root folder of the project. [^1]
 
 To use the Db2 Command Line Processor (CLP) once the install has completed, run the following command:
 
